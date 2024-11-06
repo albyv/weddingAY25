@@ -13,12 +13,13 @@
       font-style: normal;
     }
 
-    body {
-      font-family: Arial, sans-serif;
+    body, html {
       margin: 0;
       padding: 0;
-      background-color: #FFD580;  /* Background color here */
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
       color: #333;
+      background-color: #FFD580; /* Optional base color */
     }
 
     header {
@@ -63,7 +64,7 @@
     }
 
     header p {
-      font-family: 'Arial', sans-serif; /* Applying Arial font */
+      font-family: 'Arial', sans-serif;
       margin: 0.5em 0;
       font-size: 1.2em;
       color: white;
@@ -94,9 +95,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 4em 2em;
     }
 
-    /* Text content overlay */
+    /* Transparent content for overlay */
     .parallax-content {
       position: relative;
       z-index: 2; /* Places text above the background */
@@ -113,40 +115,30 @@
       background-image: url('photo1.jpg');
     }
     .section2 {
-      background-image: url('photo2.JPG');
+      background-image: url('photo2.jpg');
     }
     .section3 {
-      background-image: url('photo3.JPG');
+      background-image: url('photo3.jpg');
     }
     .section4 {
       background-image: url('photo4.jpg');
     }
 
-    .container {
-      width: 90%;
+    /* Overlay sections over the parallax images */
+    .content-section {
+      position: relative;
+      padding: 4em 2em;
       max-width: 800px;
-      margin: 2em auto;
+      margin: 0 auto;
+      background: transparent; /* No background color */
+      text-align: center;
+      z-index: 3;
     }
 
-    .section {
-      margin: 2em 0;
-      padding: 1.5em;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .section h2 {
+    .content-section h2 {
       color: #8e8a8a;
-    }
-
-    .timeline ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .timeline li {
-      margin: 0.5em 0;
+      font-size: 2em;
+      margin-bottom: 0.5em;
     }
 
     .rsvp-button {
@@ -162,7 +154,7 @@
     }
 
     .rsvp-button:hover {
-      background-color: #1F305E;
+      background-color: #333;
     }
   </style>
 </head>
@@ -176,7 +168,7 @@
     <div class="scroll-arrow">▼</div>
   </header>
 
-  <!-- Parallax Sections -->
+  <!-- Parallax Sections with Background Images -->
   <section class="parallax-section section1">
     <div class="parallax-content">
       <h2>Welcome to Our Wedding</h2>
@@ -185,37 +177,16 @@
   </section>
 
   <section class="parallax-section section2">
-    <div class="parallax-content">
-      <h2>Our Story</h2>
-      <p>From the first day we met to today, it's been an incredible journey together.</p>
-    </div>
-  </section>
-
-  <section class="parallax-section section3">
-    <div class="parallax-content">
-      <h2>The Big Day</h2>
-      <p>Join us as we celebrate our love with friends, family, and a lot of fun.</p>
-    </div>
-  </section>
-
-  <section class="parallax-section section4">
-    <div class="parallax-content">
-      <h2>Thank You for Joining Us</h2>
-      <p>We are so grateful to have you here on this unforgettable day.</p>
-    </div>
-  </section>
-
-  <div class="container">
-    <!-- Wedding Information -->
-    <section class="section">
+    <div class="content-section">
       <h2>Wedding Information</h2>
       <p>Date: 20 - 22 June 2025</p>
       <p>Location: Schenströmska Herrgården, Ramnäs, Sweden</p>
       <p>We are very much looking forward to celebrating this lovely day with all of you!</p>
-    </section>
+    </div>
+  </section>
 
-    <!-- Timeline -->
-    <section class="section timeline">
+  <section class="parallax-section section3">
+    <div class="content-section">
       <h2>Timeline</h2>
       <ul>
         <li><strong>15:00</strong> - Ceremony</li>
@@ -223,32 +194,34 @@
         <li><strong>17:30</strong> - Dinner and speeches</li>
         <li><strong>20:00</strong> - Dancing all night long</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <!-- Location -->
-    <section class="section">
+  <section class="parallax-section section4">
+    <div class="content-section">
       <h2>Location and Accommodation</h2>
       <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
-      <p>Adress: Långholmsmuren 20, 117 33 Stockholm</p>
-      <p>För fler boendealternativ, se vår rekommenderade hotellista på <a href="https://hotell-webbsida.se" target="_blank">denna sida</a>.</p>
-    </section>
+      <p>Address: Långholmsmuren 20, 117 33 Stockholm</p>
+      <p>For more accommodation options, see our recommended hotel list <a href="https://hotell-webbsida.se" target="_blank">here</a>.</p>
+    </div>
+  </section>
 
-    <!-- RSVP -->
-    <section class="section">
+  <section class="parallax-section section1">
+    <div class="content-section">
       <h2>RSVP HERE</h2>
       <p>We would greatly appreciate if you RSVP before 20 December 2024.</p>
-      <p>Include the following information when sending your RSVP:</p>
-      <p>Attendance status: Yes I/WE will attend or No we will not attend</p>
-      <p><strong>Full names</strong> e.g. Albin Persson and Yvonne Kraak</p>
-      <p><strong>Dietary restrictions</strong> e.g. Albin - lactose intolerance, Yvonne N/A</p>
-      <p><strong>Meal preferences:</strong> Beef or Vegan</p>
-      <p>Accommodation needs: e.g., 1 room with 2 beds</p>
-      <p>Other/special requests: If something in particular is needed, list it in your RSVP and we will get back to you</p>
-      
+      <p>Include the following information in your RSVP:</p>
+      <ul>
+        <li>Attendance status: Yes I/WE will attend or No we will not attend</li>
+        <li><strong>Full names:</strong> e.g., Albin Persson and Yvonne Kraak</li>
+        <li><strong>Dietary restrictions:</strong> e.g., Albin - lactose intolerance, Yvonne N/A</li>
+        <li><strong>Meal preferences:</strong> Beef or Vegan</li>
+        <li>Accommodation needs: e.g., 1 room with 2 beds</li>
+        <li>Special requests: Include any specific needs in your RSVP, and we will get back to you.</li>
+      </ul>
       <a href="mailto:brollop.kraak.persson@gmail.com" class="rsvp-button">RSVP</a>
-    </section>
-
-  </div>
+    </div>
+  </section>
 
 </body>
 </html>
