@@ -84,6 +84,44 @@
       60% { transform: translateY(-5px); }
     }
 
+    /* Parallax section styling */
+    .parallax-section {
+      position: relative;
+      min-height: 100vh; /* Full viewport height */
+      background-size: cover;
+      background-attachment: fixed; /* Creates the parallax effect */
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Text content overlay */
+    .parallax-content {
+      position: relative;
+      z-index: 2; /* Places text above the background */
+      background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
+      padding: 2em;
+      border-radius: 8px;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Specific backgrounds for each parallax section */
+    .section1 {
+      background-image: url('photo1.jpg');
+    }
+    .section2 {
+      background-image: url('photo2.jpg');
+    }
+    .section3 {
+      background-image: url('photo3.jpg');
+    }
+    .section4 {
+      background-image: url('photo4.jpg');
+    }
+
     .container {
       width: 90%;
       max-width: 800px;
@@ -138,10 +176,39 @@
     <div class="scroll-arrow">▼</div>
   </header>
 
+  <!-- Parallax Sections -->
+  <section class="parallax-section section1">
+    <div class="parallax-content">
+      <h2>Welcome to Our Wedding</h2>
+      <p>We are so excited to celebrate this special day with all of you!</p>
+    </div>
+  </section>
+
+  <section class="parallax-section section2">
+    <div class="parallax-content">
+      <h2>Our Story</h2>
+      <p>From the first day we met to today, it's been an incredible journey together.</p>
+    </div>
+  </section>
+
+  <section class="parallax-section section3">
+    <div class="parallax-content">
+      <h2>The Big Day</h2>
+      <p>Join us as we celebrate our love with friends, family, and a lot of fun.</p>
+    </div>
+  </section>
+
+  <section class="parallax-section section4">
+    <div class="parallax-content">
+      <h2>Thank You for Joining Us</h2>
+      <p>We are so grateful to have you here on this unforgettable day.</p>
+    </div>
+  </section>
+
   <div class="container">
     <!-- Wedding Information -->
     <section class="section">
-      <h2>Wedding Information </h2>
+      <h2>Wedding Information</h2>
       <p>Date: 20 - 22 June 2025</p>
       <p>Location: Schenströmska Herrgården, Ramnäs, Sweden</p>
       <p>We are very much looking forward to celebrating this lovely day with all of you!</p>
