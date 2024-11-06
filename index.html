@@ -8,7 +8,7 @@
     /* Load the Geraldine font from the file */
     @font-face {
       font-family: 'Geraldine';
-      src: url('Geraldine-PK12m.ttf') format('truetype'); /* Use the exact file name */
+      src: url('Geraldine-PK12m.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
@@ -19,22 +19,21 @@
       overflow-x: hidden;
       font-family: Arial, sans-serif;
       color: #333;
-      background-color: #FFD580; /* Optional base color */
     }
 
     header {
-      background-image: url('header.jpg'); /* Link to your image */
+      background-image: url('header.jpg');
       background-size: cover;
       background-position: center 27%;
       color: white;
       text-align: center;
       position: relative;
-      height: 80vh; /* Reduced height */
+      height: 80vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end; /* Aligns content towards the bottom */
+      justify-content: flex-end;
       align-items: center;
-      padding-bottom: 40px; /* Adds space between text and scroll arrow */
+      padding-bottom: 40px;
     }
 
     /* Overlay for readability */
@@ -44,20 +43,20 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background: rgba(0, 0, 0, 0.3); /* Adjust opacity for desired effect */
+      background: rgba(0, 0, 0, 0.3);
       z-index: 1;
     }
 
     header h1, header p {
       position: relative;
       z-index: 2;
-      background-color: rgba(0, 0, 0, 0.5); /* Background for readability */
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 0.5em;
       display: inline-block;
     }
 
     header h1 {
-      font-family: 'Geraldine', sans-serif; /* Applying Geraldine font */
+      font-family: 'Geraldine', sans-serif;
       margin: 0;
       font-size: 3.0em;
       color: white;
@@ -88,9 +87,9 @@
     /* Parallax section styling */
     .parallax-section {
       position: relative;
-      min-height: 100vh; /* Full viewport height */
+      min-height: 100vh;
       background-size: cover;
-      background-attachment: fixed; /* Creates the parallax effect */
+      background-attachment: fixed;
       background-position: center;
       display: flex;
       align-items: center;
@@ -98,41 +97,17 @@
       padding: 4em 2em;
     }
 
-    /* Transparent content for overlay */
-    .parallax-content {
-      position: relative;
-      z-index: 2; /* Places text above the background */
-      background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
-      padding: 2em;
-      border-radius: 8px;
-      max-width: 600px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Specific backgrounds for each parallax section */
-    .section1 {
-      background-image: url('photo1.jpg');
-    }
-    .section2 {
-      background-image: url('photo2.jpg');
-    }
-    .section3 {
-      background-image: url('photo3.jpg');
-    }
-    .section4 {
-      background-image: url('photo4.jpg');
-    }
-
-    /* Overlay sections over the parallax images */
+    /* Transparent content box overlay */
     .content-section {
       position: relative;
-      padding: 4em 2em;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent box for readability */
+      padding: 2em;
+      border-radius: 8px;
       max-width: 800px;
       margin: 0 auto;
-      background: transparent; /* No background color */
       text-align: center;
-      z-index: 3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .content-section h2 {
@@ -156,6 +131,20 @@
     .rsvp-button:hover {
       background-color: #333;
     }
+
+    /* Background images for each parallax section */
+    .section1 {
+      background-image: url('photo1.jpg');
+    }
+    .section2 {
+      background-image: url('photo2.jpg');
+    }
+    .section3 {
+      background-image: url('photo3.jpg');
+    }
+    .section4 {
+      background-image: url('photo4.jpg');
+    }
   </style>
 </head>
 <body>
@@ -168,15 +157,9 @@
     <div class="scroll-arrow">▼</div>
   </header>
 
-  <!-- Parallax Sections with Background Images -->
-  <section class="parallax-section section1">
-    <div class="parallax-content">
-      <h2>Welcome to Our Wedding</h2>
-      <p>We are so excited to celebrate this special day with all of you!</p>
-    </div>
-  </section>
+  <!-- Parallax Sections with Transparent Overlay Boxes -->
 
-  <section class="parallax-section section2">
+  <section class="parallax-section section1">
     <div class="content-section">
       <h2>Wedding Information</h2>
       <p>Date: 20 - 22 June 2025</p>
@@ -185,7 +168,7 @@
     </div>
   </section>
 
-  <section class="parallax-section section3">
+  <section class="parallax-section section2">
     <div class="content-section">
       <h2>Timeline</h2>
       <ul>
@@ -197,7 +180,7 @@
     </div>
   </section>
 
-  <section class="parallax-section section4">
+  <section class="parallax-section section3">
     <div class="content-section">
       <h2>Location and Accommodation</h2>
       <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
@@ -206,7 +189,7 @@
     </div>
   </section>
 
-  <section class="parallax-section section1">
+  <section class="parallax-section section4">
     <div class="content-section">
       <h2>RSVP HERE</h2>
       <p>We would greatly appreciate if you RSVP before 20 December 2024.</p>
