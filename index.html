@@ -132,23 +132,32 @@
       background-color: #333;
     }
 <style>
-  /* Background images for each parallax section with adjusted positions */
-  .section1 {
-    background-image: url('photo1.jpg');
-    background-position: center top;
-  }
-  .section2 {
-    background-image: url('photo2.jpg');
-    background-position: center center;
-  }
-  .section3 {
-    background-image: url('photo3.jpg');
-    background-position: center 30%;
-  }
-  .section4 {
-    background-image: url('photo4.jpg');
-    background-position: center bottom;
-  }
+    /* Other CSS styles for body, header, etc. */
+
+    /* Background images for each parallax section with adjusted zoom levels and positions */
+    .section1 {
+      background-image: url('photo1.jpg');
+      background-size: 100%; /* Zoom in by 20% */
+      background-position: center 20%;
+    }
+
+    .section2 {
+      background-image: url('photo2.jpg');
+      background-size: 80%; /* Default size */
+      background-position: center;
+    }
+
+    .section3 {
+      background-image: url('photo3.jpg');
+      background-size: 80%; /* Zoom in by 50% */
+      background-position: center 30%;
+    }
+
+    .section4 {
+      background-image: url('photo4.jpg');
+      background-size: 80%; /* Zoom out to see more */
+      background-position: center bottom;
+    }
 </style>
 
 </head>
