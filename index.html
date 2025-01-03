@@ -5,172 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding of Albin and Yvonne 2025</title>
   <style>
-  /* Load the Geraldine font from the file */
-  @font-face {
-    font-family: 'Geraldine';
-    src: url('Geraldine-PK12m.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+    /* Load the Geraldine font from the file */
+    @font-face {
+      font-family: 'Geraldine';
+      src: url('Geraldine-PK12m.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-  body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
 
-  header {
-    background-image: url('header.jpg');
-    background-size: cover;
-    background-position: center 27%;
-    color: white;
-    text-align: center;
-    position: relative;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 40px;
-  }
+    /* Header Section (Banner) */
+    header {
+      background-image: url('header.jpg');
+      background-size: cover;
+      background-position: center 27%;
+      color: white;
+      text-align: center;
+      position: relative;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 40px;
+    }
 
-  /* Overlay for readability */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-  }
+    /* Overlay for readability */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
 
-  header h1, header p {
-    position: relative;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0.5em;
-    display: inline-block;
-  }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 0.5em;
+      display: inline-block;
+    }
 
-  header h1 {
-    font-family: 'Geraldine', sans-serif;
-    margin: 0;
-    font-size: 3.0em;
-    color: white;
-  }
+    header h1 {
+      font-family: 'Geraldine', sans-serif;
+      margin: 0;
+      font-size: 3.0em;
+      color: white;
+    }
 
-  header p {
-    font-family: 'Arial', sans-serif;
-    margin: 0.5em 0;
-    font-size: 1.2em;
-    color: white;
-  }
+    header p {
+      font-family: 'Arial', sans-serif;
+      margin: 0.5em 0;
+      font-size: 1.2em;
+      color: white;
+    }
 
-  .scroll-arrow {
-    position: absolute;
-    bottom: 20px;
-    font-size: 24px;
-    color: white;
-    z-index: 2;
-    animation: bounce 2s infinite;
-  }
+    .scroll-arrow {
+      position: absolute;
+      bottom: 20px;
+      font-size: 24px;
+      color: white;
+      z-index: 2;
+      animation: bounce 2s infinite;
+    }
 
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-  }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
 
-  /* Parallax section styling */
-  .parallax-section {
-    position: relative;
-    min-height: 100vh;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4em 2em;
-  }
+    /* Parallax Sections with Same Background Image */
+    .parallax-section {
+      background-image: url('kransen.png'); /* Same image for all sections */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-attachment: fixed; /* Enables parallax scrolling effect */
+      min-height: 100vh; /* Ensures full-screen height for each section */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4em 2em;
+      color: #333; /* Default text color for readability */
+    }
 
-  /* Transparent content box overlay */
-  .content-section {
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent box for readability */
-    padding: 2em;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+    /* Transparent content box overlay */
+    .content-section {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent box for readability */
+      padding: 2em;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-  .content-section h2 {
-    color: #8e8a8a;
-    font-size: 2em;
-    margin-bottom: 0.5em;
-  }
+    .content-section h2 {
+      color: #8e8a8a;
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
 
-  /* Align list items in the content-section */
-  .content-section ul {
-    list-style-position: inside;
-    padding-left: 0;
-    margin-left: 0;
-  }
+    .rsvp-button {
+      display: block;
+      text-align: center;
+      margin: 1.5em 0;
+      padding: 1em;
+      background-color: #1F305E;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
-  .content-section ul li {
-    padding-left: 1.2em;
-    text-indent: -1.2em;
-  }
-
-  .rsvp-button {
-    display: block;
-    text-align: center;
-    margin: 1.5em 0;
-    padding: 1em;
-    background-color: #1F305E;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-
-  .rsvp-button:hover {
-    background-color: #333;
-  }
-
-  /* Background images for each parallax section with adjusted zoom levels and positions */
-.section1 {
-  background-image: url('kransen.png');
-  background-size: 80%; /* Adjust zoom level */
-  background-position: center 20%;
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-}
-
-
-  .section2 {
-    background-image: url('N/A');
-    background-size: 80%; /* Adjust zoom level */
-    background-position: center;
-  }
-
-  .section3 {
-    background-image: url('N/A');
-    background-size: 80%; /* Adjust zoom level */
-    background-position: center 30%;
-  }
-
-  .section4 {
-    background-image: url('N/A');
-    background-size: 80%; /* Adjust zoom level */
-    background-position: center bottom;
-  }
-</style>
+    .rsvp-button:hover {
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
 
@@ -179,7 +142,7 @@
     <div class="overlay"></div>
     <h1>Wedding of Albin and Yvonne</h1>
     <p>20-22 June 2025!</p>
-    <div class="scroll-arrow">▼</div>
+    <div class="scroll-arrow">&#9660;</div>
   </header>
 
   <!-- Parallax Sections with Transparent Overlay Boxes -->
