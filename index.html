@@ -286,19 +286,108 @@
   </section>
 
   <section class="parallax-section" id="location">
-    <div class="location-section">
-      <div class="content-section">
-        <h2>Location and Transportation</h2>
-        <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
-        <ul>
-          <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
-          <li>Parking is available on-site.</li>
-          <li>Walk 5 minutes from the bus stop to the venue.</li>
-        </ul>
-      </div>
-      <img src="omradeskart.jpg" alt="Map of the area" class="location-image">
+  <div class="location-section">
+    <!-- Text Content -->
+    <div class="content-section">
+      <h2>Location & Transportation</h2>
+      <h3>Schenströmska Herrgården and Ramnäs</h3>
+      <p>
+        We are delighted to celebrate this special weekend with our family and friends at Schenströmska Herrgården.
+        This historic mansion, built in the early 1700s and completed in 1762, provides the perfect setting for both our wedding
+        and the Midsummer celebration. The best part? Everyone can stay on-site throughout the weekend! 
+        For more information about the venue, visit: 
+        <a href="https://schenstromska.se/konferens-vasteras/" target="_blank">https://schenstromska.se/konferens-vasteras/</a>.
+      </p>
+
+      <h3>How to Get to Schenströmska Herrgården</h3>
+      <p>
+        <strong>By Car:</strong><br>
+        Enter the following address into Google Maps or your GPS: 
+        <em>Schenströms Väg 1, 730 60 Ramnäs</em>. Parking is available on-site, including three charging poles for electric vehicles (one regular and two Tesla-compatible).
+      </p>
+      <p>
+        <strong>By Air:</strong><br>
+        From Stockholm Arlanda Airport, take a train to Västerås, then transfer to a train heading to Ramnäs station. 
+        Tickets can be purchased in advance through 
+        <a href="https://www.sj.se/en" target="_blank">SJ</a>. From Ramnäs station, it’s a 30-minute walk to the venue, or you can request a pickup.
+      </p>
+      <p>
+        <strong>By Public Transportation:</strong><br>
+        Take a train to Ramnäs station (usually via Västerås). From the station, it’s a 30-minute walk to the wedding location, or you can request a pickup.
+      </p>
+
+      <h3>Paying in Sweden and Currency Information</h3>
+      <p>
+        If you're traveling from abroad, it's good to know that Sweden’s currency is the Swedish Krona (SEK). 
+        While Sweden has not adopted the Euro, debit and credit cards are widely accepted, including Visa, Mastercard, Apple Pay, and Google Pay. 
+        However, cash payments in Euros or other foreign currencies are not possible in Sweden.
+      </p>
+
+      <h3>Alternative Accommodations</h3>
+      <p>
+        If you are not staying at the wedding venue, here are some nearby options:
+      </p>
+      <p>
+        <strong>Nadden Hotell:</strong><br>
+        • Distance: Approximately 3 minutes by car, or 20 minutes on foot.<br>
+        • Booking: Available on Booking.com or directly via <a href="mailto:reception@nadden.se">reception@nadden.se</a> / (+46) 0220-13370.
+      </p>
+      <p>
+        <strong>Skultuna Hotell:</strong><br>
+        • Distance: About 20 minutes by car.<br>
+        • Booking: Visit <a href="https://www.skultunahotell.se/sv" target="_blank">https://www.skultunahotell.se/sv</a>.
+      </p>
+
+      <p>
+        <strong><u>Important Note:</u></strong><br>
+        Transportation to and from alternative accommodations will not be provided. Additionally, taxis in Ramnäs are limited, as most operate out of Västerås, which may incur extra charges for pickup in Ramnäs.
+      </p>
     </div>
-  </section>
+
+    <!-- Image Content -->
+    <img src="omradeskart.jpg" alt="Map of the area" class="location-image">
+  </div>
+</section>
+
+<style>
+  /* Responsive Flexbox Layout */
+  .location-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  /* Text Section */
+  .content-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+
+  /* Image Section */
+  .location-image {
+    flex: 1;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .location-section {
+      flex-direction: column; /* Stack text and image */
+      align-items: center;
+    }
+
+    .location-image {
+      max-width: 100%; /* Make the image fit the mobile screen */
+    }
+  }
+</style>
 
   <section class="parallax-section" id="faq">
     <div class="content-section">
