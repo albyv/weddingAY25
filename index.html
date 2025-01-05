@@ -262,46 +262,103 @@
   </header>
 
   <!-- Parallax Sections -->
-  <section class="parallax-section" id="schedule">
-    <div class="content-section">
-      <h2>Preliminary Schedule for the Weekend</h2>
-      <div class="schedule-grid">
-        <!-- Friday -->
-        <div class="schedule-day">
-          <h3>Friday, 20 June 2025 (Wedding day)</h3>
-          <ul>
-            <li><strong>15:30</strong> Arrival</li>
-            <li><strong>16:00</strong> Access your room (drop off luggage and dress up for the ceremony and dinner)</li>
-            <li><strong>17:00</strong> Wedding Ceremony (outdoors; seating available)</li>
-            <li><strong>18:00</strong> Toast and photographs by the stables</li>
-            <li><strong>19:00 – 22:00</strong> Dinner hosted by the toastmasters</li>
-            <li><strong>22:30 – 01:00</strong> Party</li>
-          </ul>
-        </div>
+<section class="parallax-section" id="schedule">
+  <div class="content-section">
+    <h2>Preliminary Schedule for the Weekend</h2>
+    <div class="schedule-grid">
+      <!-- Friday -->
+      <div class="schedule-day">
+        <h3>Friday, 20 June 2025 (Wedding day)</h3>
+        <ul>
+          <li><strong>15:30</strong> Arrival</li>
+          <li><strong>16:00</strong> Access your room (drop off luggage and dress up for the ceremony and dinner)</li>
+          <li><strong>17:00</strong> Wedding Ceremony (outdoors; seating available)</li>
+          <li><strong>18:00</strong> Toast and photographs by the stables</li>
+          <li><strong>19:00 – 22:00</strong> Dinner hosted by the toastmasters</li>
+          <li><strong>22:30 – 01:00</strong> Party</li>
+        </ul>
+      </div>
 
-        <!-- Saturday -->
-        <div class="schedule-day">
-          <h3>Saturday, 21 June 2025 (Midsummer festivities)</h3>
-          <ul>
-            <li><strong>08:00 – 09:30</strong> Breakfast for families and early birds</li>
-            <li><strong>10:30 – 12:00</strong> Brunch for party animals</li>
-            <li><strong>12:30 – 17:30</strong> Outdoor Midsummer games (see FAQ for details)</li>
-            <li><strong>17:30 – 19:00</strong> Rest and prepare for the Midsummer dinner (sauna available for those interested)</li>
-            <li><strong>19:00</strong> Midsummer dinner and PARTY!</li>
-          </ul>
-        </div>
+      <!-- Saturday -->
+      <div class="schedule-day">
+        <h3>Saturday, 21 June 2025 (Midsummer festivities)</h3>
+        <ul>
+          <li><strong>08:00 – 09:30</strong> Breakfast for families and early birds</li>
+          <li><strong>10:30 – 12:00</strong> Brunch for party animals</li>
+          <li><strong>12:30 – 17:30</strong> Outdoor Midsummer games (see FAQ for details)</li>
+          <li><strong>17:30 – 19:00</strong> Rest and prepare for the Midsummer dinner (sauna available for those interested)</li>
+          <li><strong>19:00</strong> Midsummer dinner and PARTY!</li>
+        </ul>
+      </div>
 
-        <!-- Sunday -->
-        <div class="schedule-day">
-          <h3>Sunday, 22 June 2025 (Leaving day)</h3>
-          <ul>
-            <li><strong>08:00 – 10:15</strong> Breakfast</li>
-            <li><strong>11:00</strong> Departure</li>
-          </ul>
-        </div>
+      <!-- Sunday -->
+      <div class="schedule-day">
+        <h3>Sunday, 22 June 2025 (Leaving day)</h3>
+        <ul>
+          <li><strong>08:00 – 10:15</strong> Breakfast</li>
+          <li><strong>11:00</strong> Departure</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<style>
+  /* Grid for Schedule */
+  .schedule-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .schedule-day {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Ensures left alignment for all text */
+  }
+
+  .schedule-day h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #1F305E;
+  }
+
+  .schedule-day ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .schedule-day ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: left; /* Ensures list items are left-aligned */
+  }
+
+  .schedule-day ul li strong {
+    color: #333;
+    font-weight: bold;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .schedule-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .schedule-day {
+      max-width: 100%;
+    }
+  }
+</style>
 
   <!-- Location & Transportation -->
   <section class="parallax-section" id="location">
