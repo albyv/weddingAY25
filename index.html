@@ -92,10 +92,6 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 80vh;
     }
 
     .side-menu ul {
@@ -117,6 +113,50 @@
 
     .side-menu ul li a:hover {
       text-decoration: underline;
+    }
+
+    /* Mobile Side Menu (Hamburger Menu) */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 200, 0.8);
+      padding: 10px;
+      border-radius: 8px;
+      z-index: 1100;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      .side-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background: rgba(255, 255, 200, 0.95);
+        padding: 20px;
+        z-index: 1100;
+        overflow-y: auto;
+      }
+
+      .side-menu.active {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
 
     /* Countdown Timer */
@@ -177,10 +217,26 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .content-section h2 {
-      color: #8e8a8a;
-      font-size: 2em;
-      margin-bottom: 0.5em;
+    /* Location Section Image Fix */
+    .location-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .location-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .location-section {
+        flex-direction: column;
+      }
     }
 
     #faq ol {
@@ -204,6 +260,13 @@
   </style>
 </head>
 <body>
+  <!-- Menu Toggle for Mobile -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
   <!-- Side Menu -->
   <div class="side-menu">
     <ul>
@@ -265,14 +328,17 @@
   </section>
 
   <section class="parallax-section" id="location">
-    <div class="content-section">
-      <h2>Location and Transportation</h2>
-      <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
-      <ul>
-        <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
-        <li>Parking is available on-site.</li>
-        <li>Walk 5 minutes from the bus stop to the venue.</li>
-      </ul>
+    <div class="location-section">
+      <div class="content-section">
+        <h2>Location and Transportation</h2>
+        <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
+        <ul>
+          <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
+          <li>Parking is available on-site.</li>
+          <li>Walk 5 minutes from the bus stop to the venue.</li>
+        </ul>
+      </div>
+      <img src="omradeskart.jpg" alt="Map of the area">
     </div>
   </section>
 
@@ -356,6 +422,11 @@
         clearInterval(timer);
         document.querySelector(".countdown-container").textContent = "The wedding has started!";
       }
+    }
+
+    function toggleMenu() {
+      const sideMenu = document.querySelector(".side-menu");
+      sideMenu.classList.toggle("active");
     }
 
     const timer = setInterval(updateCountdown, 1000);
