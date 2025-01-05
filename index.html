@@ -119,13 +119,39 @@
       text-decoration: underline;
     }
 
-    /* Countdown Timer in Side Menu */
-    #countdown {
-      margin-top: auto;
+    /* Countdown Timer */
+    .countdown-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .countdown-box {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      padding: 10px 20px;
       text-align: center;
-      font-size: 1.2em;
-      color: #1F305E;
+      font-family: 'Arial', sans-serif;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown-box span {
+      display: block;
+      font-size: 2.5em;
       font-weight: bold;
+      color: #1F305E;
+    }
+
+    .countdown-box label {
+      display: block;
+      font-size: 1em;
+      font-weight: normal;
+      color: #555;
     }
 
     /* Parallax Sections */
@@ -147,6 +173,7 @@
       padding: 2em;
       border-radius: 8px;
       text-align: center;
+      max-width: 800px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -154,37 +181,6 @@
       color: #8e8a8a;
       font-size: 2em;
       margin-bottom: 0.5em;
-    }
-
-    .location-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 4em 2em;
-    }
-
-    .location-image {
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .rsvp-button {
-      display: block;
-      text-align: center;
-      margin: 1.5em 0;
-      padding: 1em;
-      background-color: #1F305E;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    .rsvp-button:hover {
-      background-color: #333;
     }
 
     #faq ol {
@@ -200,6 +196,11 @@
     #faq ol li strong {
       font-weight: bold;
     }
+
+    #faq ol li ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
   </style>
 </head>
 <body>
@@ -212,8 +213,25 @@
       <li><a href="#location">Location & Transportation</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <div id="countdown">
-      Loading countdown...
+  </div>
+
+  <!-- Countdown Timer -->
+  <div class="countdown-container">
+    <div class="countdown-box">
+      <span id="days">0</span>
+      <label>Days</label>
+    </div>
+    <div class="countdown-box">
+      <span id="hours">0</span>
+      <label>Hrs</label>
+    </div>
+    <div class="countdown-box">
+      <span id="minutes">0</span>
+      <label>Mins</label>
+    </div>
+    <div class="countdown-box">
+      <span id="seconds">0</span>
+      <label>Secs</label>
     </div>
   </div>
 
@@ -247,17 +265,14 @@
   </section>
 
   <section class="parallax-section" id="location">
-    <div class="location-section">
-      <div class="content-section">
-        <h2>Location and Transportation</h2>
-        <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
-        <ul>
-          <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
-          <li>Parking is available on-site.</li>
-          <li>Walk 5 minutes from the bus stop to the venue.</li>
-        </ul>
-      </div>
-      <img src="omradeskart.jpg" alt="Map of the area" class="location-image">
+    <div class="content-section">
+      <h2>Location and Transportation</h2>
+      <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
+      <ul>
+        <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
+        <li>Parking is available on-site.</li>
+        <li>Walk 5 minutes from the bus stop to the venue.</li>
+      </ul>
     </div>
   </section>
 
@@ -332,12 +347,14 @@
       const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % 1000) / 1000);
 
-      document.getElementById("countdown").textContent =
-        `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
 
       if (distance < 0) {
         clearInterval(timer);
-        document.getElementById("countdown").textContent = "The wedding has started!";
+        document.querySelector(".countdown-container").textContent = "The wedding has started!";
       }
     }
 
