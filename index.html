@@ -139,16 +139,31 @@
       background: rgba(255, 255, 255, 0.8); /* Semi-transparent box for readability */
       padding: 2em;
       border-radius: 8px;
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 600px; /* Adjusted to allow space for the image */
+      margin-right: 2%;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .location-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 4em 2em;
     }
 
     .content-section h2 {
       color: #8e8a8a;
       font-size: 2em;
       margin-bottom: 0.5em;
+    }
+
+    .location-image {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .rsvp-button {
@@ -211,15 +226,18 @@
   </section>
 
   <section class="parallax-section" id="location">
-    <div class="content-section">
-      <h2>Location and Transportation</h2>
-      <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
-      <p>Directions:</p>
-      <ul>
-        <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
-        <li>Parking is available on-site.</li>
-        <li>Walk 5 minutes from the bus stop to the venue.</li>
-      </ul>
+    <div class="location-section">
+      <div class="content-section">
+        <h2>Location and Transportation</h2>
+        <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
+        <p>Directions:</p>
+        <ul>
+          <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
+          <li>Parking is available on-site.</li>
+          <li>Walk 5 minutes from the bus stop to the venue.</li>
+        </ul>
+      </div>
+      <img src="omradeskart.jpg" alt="Map of the area" class="location-image">
     </div>
   </section>
 
