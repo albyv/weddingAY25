@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding of Albin and Yvonne 2025</title>
   <style>
-    /* Load the Geraldine font from the file */
     @font-face {
       font-family: 'Geraldine';
       src: url('Geraldine-PK12m.ttf') format('truetype');
@@ -21,7 +20,7 @@
       color: #333;
     }
 
-    /* Header Section (Banner) */
+    /* Header Section */
     header {
       background-image: url('header.jpg');
       background-size: cover;
@@ -37,7 +36,6 @@
       padding-bottom: 40px;
     }
 
-    /* Overlay for readability */
     .overlay {
       position: absolute;
       top: 0;
@@ -64,7 +62,6 @@
     }
 
     header p {
-      font-family: 'Arial', sans-serif;
       margin: 0.5em 0;
       font-size: 1.2em;
       color: white;
@@ -90,11 +87,15 @@
       position: fixed;
       top: 20px;
       left: 20px;
-      background: rgba(255, 255, 200, 0.8); /* Pastel semi-transparent yellow */
+      background: rgba(255, 255, 200, 0.8);
       padding: 10px 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 80vh;
     }
 
     .side-menu ul {
@@ -118,31 +119,41 @@
       text-decoration: underline;
     }
 
-    /* Parallax Sections with Same Background Image */
+    /* Countdown Timer in Side Menu */
+    #countdown {
+      margin-top: auto;
+      text-align: center;
+      font-size: 1.2em;
+      color: #1F305E;
+      font-weight: bold;
+    }
+
+    /* Parallax Sections */
     .parallax-section {
-      background-image: url('kransen.png'); /* Same image for all sections */
-      background-size: cover; /* Ensures the image covers the entire section */
-      background-position: center; /* Centers the image */
-      background-attachment: fixed; /* Enables parallax scrolling effect */
-      min-height: 100vh; /* Ensures full-screen height for each section */
+      background-image: url('kransen.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 4em 2em;
-      color: #333; /* Default text color for readability */
+      color: #333;
     }
 
-    /* Transparent content box overlay */
     .content-section {
-      position: relative;
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.8); /* Semi-transparent box for readability */
+      background: rgba(255, 255, 255, 0.8);
       padding: 2em;
       border-radius: 8px;
-      max-width: 600px; /* Adjusted to allow space for the image */
-      margin-right: 2%;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .content-section h2 {
+      color: #8e8a8a;
+      font-size: 2em;
+      margin-bottom: 0.5em;
     }
 
     .location-section {
@@ -151,12 +162,6 @@
       align-items: center;
       gap: 20px;
       padding: 4em 2em;
-    }
-
-    .content-section h2 {
-      color: #8e8a8a;
-      font-size: 2em;
-      margin-bottom: 0.5em;
     }
 
     .location-image {
@@ -182,7 +187,6 @@
       background-color: #333;
     }
 
-    /* FAQ styling */
     #faq ol {
       list-style-type: decimal;
       margin-left: 20px;
@@ -193,22 +197,12 @@
       text-align: left;
     }
 
-    #faq ol li p {
-      margin: 5px 0;
-    }
-
-    #faq ol li ul {
-      list-style-type: lower-alpha;
-      margin-left: 20px;
-    }
-
     #faq ol li strong {
       font-weight: bold;
     }
   </style>
 </head>
 <body>
-
   <!-- Side Menu -->
   <div class="side-menu">
     <ul>
@@ -218,6 +212,9 @@
       <li><a href="#location">Location & Transportation</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
+    <div id="countdown">
+      Loading countdown...
+    </div>
   </div>
 
   <!-- Header -->
@@ -228,7 +225,7 @@
     <div class="scroll-arrow">&#9660;</div>
   </header>
 
-  <!-- Parallax Sections with Transparent Overlay Boxes -->
+  <!-- Parallax Sections -->
   <section class="parallax-section" id="schedule">
     <div class="content-section">
       <h2>Schedule</h2>
@@ -254,7 +251,6 @@
       <div class="content-section">
         <h2>Location and Transportation</h2>
         <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
-        <p>Directions:</p>
         <ul>
           <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
           <li>Parking is available on-site.</li>
@@ -324,5 +320,28 @@
     </div>
   </section>
 
+  <script>
+    const weddingDate = new Date("June 20, 2025 15:30:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % 1000) / 1000);
+
+      document.getElementById("countdown").textContent =
+        `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").textContent = "The wedding has started!";
+      }
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
