@@ -115,50 +115,6 @@
       text-decoration: underline;
     }
 
-    /* Mobile Side Menu (Hamburger Menu) */
-    .menu-toggle {
-      display: none;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: rgba(255, 255, 200, 0.8);
-      padding: 10px;
-      border-radius: 8px;
-      z-index: 1100;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: #333;
-      margin: 5px 0;
-    }
-
-    @media (max-width: 768px) {
-      .side-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100vh;
-        background: rgba(255, 255, 200, 0.95);
-        padding: 20px;
-        z-index: 1100;
-        overflow-y: auto;
-      }
-
-      .side-menu.active {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
     /* Countdown Timer */
     .countdown-container {
       position: fixed;
@@ -217,6 +173,39 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    /* Location Section */
+    .location-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .content-section {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .location-image {
+      flex: 1;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .location-section {
+        flex-direction: column;
+      }
+
+      .location-image {
+        max-width: 100%;
+      }
+    }
+
     /* FAQ Styles */
     #faq ol {
       list-style-type: decimal;
@@ -236,13 +225,6 @@
   </style>
 </head>
 <body>
-  <!-- Menu Toggle for Mobile -->
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
   <!-- Side Menu -->
   <div class="side-menu">
     <ul>
@@ -314,7 +296,7 @@
           <li>Walk 5 minutes from the bus stop to the venue.</li>
         </ul>
       </div>
-      <img src="omradeskart.jpg" alt="Map of the area">
+      <img src="omradeskart.jpg" alt="Map of the area" class="location-image">
     </div>
   </section>
 
@@ -407,11 +389,6 @@
         clearInterval(timer);
         document.querySelector(".countdown-container").textContent = "The wedding has started!";
       }
-    }
-
-    function toggleMenu() {
-      const sideMenu = document.querySelector(".side-menu");
-      sideMenu.classList.toggle("active");
     }
 
     const timer = setInterval(updateCountdown, 1000);
