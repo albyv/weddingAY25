@@ -207,6 +207,34 @@
         max-width: 100%;
       }
     }
+    
+    /* Toastmasters Images Styling */
+.toastmasters-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.toastmaster-image {
+  width: 100%; /* Set width to 100% for responsiveness */
+  max-width: 400px; /* Limit the width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better aesthetics */
+  object-fit: cover; /* Ensure the image covers the space nicely */
+}
+
+@media (max-width: 768px) {
+  .toastmasters-images {
+    flex-direction: column; /* Stack images vertically on smaller screens */
+    align-items: center; /* Center align the images */
+  }
+
+  .toastmaster-image {
+    max-width: 90%; /* Reduce max width on smaller screens */
+  }
+}
 
     /* FAQ Styling */
     #faq ol {
@@ -482,20 +510,26 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
 </style>
 
    <!-- Toastmasters Section -->
-  <section class="parallax-section" id="toast">
-    <div class="content-section">
-      <h2>Toastmasters!</h2>
-      <p>For the wedding dinner and Midsummer games, we are thrilled to have our maid of honor, Lisa Jansen, and best man, George Mackenzie Smith, as our wonderful toastmasters! Not only are they dear friends we’ve known for many years, but they are also true bringers of joy and laughter.</p>
-      <p>If you’d like to make a toast or performance during the dinner, or organize a quiz or game for the Midsummer celebration, please reach out to them at: <a href="mailto:toastmas2025@gmail.com">toastmas2025@gmail.com</a>.</p>
-      <p>When reaching out, kindly include:</p>
-      <ul>
-        <p><u>Your full name</u></p>
-        <p><u>When you’d like to make the toast (if applicable)</u></p>
-        <p><u>Details of the activity you’d like to organize</u></p>
-      </ul>
-      <p>We can’t wait to see what fun surprises you’ll bring to the festivities!</p>
+ <section class="parallax-section" id="toast">
+  <div class="content-section">
+    <h2>Toastmasters!</h2>
+    <p>For the wedding dinner and Midsummer games, we are thrilled to have our maid of honor, Lisa Jansen, and best man, George Mackenzie Smith, as our wonderful toastmasters! Not only are they dear friends we’ve known for many years, but they are also true bringers of joy and laughter.</p>
+    <p>If you’d like to make a toast or performance during the dinner, or organize a quiz or game for the Midsummer celebration, please reach out to them at: <a href="mailto:toastmas2025@gmail.com">toastmas2025@gmail.com</a>.</p>
+    <p>When reaching out, kindly include:</p>
+    <ul>
+      <li><u>Your full name</u></li>
+      <li><u>When you’d like to make the toast (if applicable)</u></li>
+      <li><u>Details of the activity you’d like to organize</u></li>
+    </ul>
+    <p>We can’t wait to see what fun surprises you’ll bring to the festivities!</p>
+
+    <!-- Image Section -->
+    <div class="toastmasters-images">
+      <img src="george.jpg" alt="George Mackenzie Smith" class="toastmaster-image">
+      <img src="lisa.jpg" alt="Lisa Jansen" class="toastmaster-image">
     </div>
-  </section>
+  </div>
+</section>
   
   <!-- FAQ -->
   <section class="parallax-section" id="faq">
