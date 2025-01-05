@@ -275,6 +275,7 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
 
 <section class="parallax-section" id="rsvp">
   <div class="content-section">
+    <h2>RSVP Now</h2>
     <p>We can't wait to celebrate with you! Please let us know if you'll be joining by filling out the RSVP form.</p>
     <a href="https://forms.gle/SDqznjkPABJNUyBh8" target="_blank" class="rsvp-button">RSVP Here</a>
   </div>
@@ -283,22 +284,15 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
 <style>
   /* RSVP Section Styling */
   #rsvp {
+    background-image: url('kransen.png'); /* Matches the shared parallax background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Enables parallax scrolling */
+    min-height: 100vh; /* Ensures full height consistency */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 50px 20px;
-  }
-
-  #rsvp h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #1F305E;
-  }
-
-  #rsvp p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+    padding: 4em 2em;
     color: #333;
   }
 
