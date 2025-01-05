@@ -85,6 +85,39 @@
       60% { transform: translateY(-5px); }
     }
 
+    /* Side Menu */
+    .side-menu {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 200, 0.8); /* Pastel semi-transparent yellow */
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .side-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .side-menu ul li {
+      margin: 10px 0;
+    }
+
+    .side-menu ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .side-menu ul li a:hover {
+      text-decoration: underline;
+    }
+
     /* Parallax Sections with Same Background Image */
     .parallax-section {
       background-image: url('kransen.png'); /* Same image for all sections */
@@ -137,8 +170,19 @@
 </head>
 <body>
 
+  <!-- Side Menu -->
+  <div class="side-menu">
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="https://forms.gle/SDqznjkPABJNUyBh8" target="_blank">RSVP</a></li>
+      <li><a href="#location">Location & Transportation</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+
   <!-- Header -->
-  <header>
+  <header id="top">
     <div class="overlay"></div>
     <h1>Wedding of Albin and Yvonne</h1>
     <p>20-22 June 2025!</p>
@@ -146,50 +190,54 @@
   </header>
 
   <!-- Parallax Sections with Transparent Overlay Boxes -->
-  <section class="parallax-section">
+  <section class="parallax-section" id="schedule">
     <div class="content-section">
-      <h2>Wedding Information</h2>
-      <p>Date: 20 - 22 June 2025</p>
-      <p>Location: Schenströmska Herrgården, Ramnäs, Sweden</p>
-      <p>We are very much looking forward to celebrating this lovely day with all of you!</p>
-    </div>
-  </section>
-
-  <section class="parallax-section">
-    <div class="content-section">
-      <h2>Timeline</h2>
+      <h2>Schedule</h2>
+      <p>20 June 2025</p>
       <ul>
-        <li><strong>15:00</strong> - Ceremony</li>
-        <li><strong>16:00</strong> - Mingle and bridal toast</li>
-        <li><strong>17:30</strong> - Dinner and speeches</li>
-        <li><strong>20:00</strong> - Dancing all night long</li>
+        <li><strong>17:00</strong> - Wedding Ceremony (Arrive by 16:15)</li>
+        <li><strong>19:00</strong> - Dinner</li>
+        <li><strong>21:00</strong> - Party (Ends at 01:00)</li>
+      </ul>
+      <p>21 June 2025</p>
+      <ul>
+        <li>Midsummer games and celebrations</li>
+      </ul>
+      <p>22 June 2025</p>
+      <ul>
+        <li>Farewell breakfast</li>
       </ul>
     </div>
   </section>
 
-  <section class="parallax-section">
+  <section class="parallax-section" id="location">
     <div class="content-section">
-      <h2>Location and Accommodation</h2>
+      <h2>Location and Transportation</h2>
       <p>The wedding will take place at Schenströmska Herrgården in Ramnäs, Sweden.</p>
-      <p><a href="https://maps.app.goo.gl/67XG3vWe3ahZ6ouf8" target="_blank">HERE</a></p>
-      <p>For other accommodation options, here is a list of recommendations: <a href="https://www.skultunahotell.se/sv" target="_blank">Skulltuna Hotel</a> <a href="https://www.farnaherrgard.se/" target="_blank">Färna Herrgård & SPA</a>.</p>
+      <p>Directions:</p>
+      <ul>
+        <li>Take a train to Västerås and change to a local bus to Ramnäs.</li>
+        <li>Parking is available on-site.</li>
+        <li>Walk 5 minutes from the bus stop to the venue.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="parallax-section">
+  <section class="parallax-section" id="faq">
     <div class="content-section">
-      <h2>RSVP HERE</h2>
-      <p>We would greatly appreciate if you RSVP before 20 December 2024.</p>
-      <p>Include the following information in your RSVP:</p>
+      <h2>FAQ</h2>
       <ul>
-        <li>Attendance status: Yes I/WE will attend or No we will not attend</li>
-        <li><strong>Full names:</strong> e.g., Albin Persson and Yvonne Kraak</li>
-        <li><strong>Dietary restrictions:</strong> e.g., Albin - lactose intolerance, Yvonne N/A</li>
-        <li><strong>Meal preferences:</strong> Beef or Vegan</li>
-        <li>Accommodation needs: e.g., 1 room with 2 beds</li>
-        <li>Special requests: Include any specific needs in your RSVP, and we will get back to you.</li>
+        <li><strong>Can I bring a date?</strong> Yes, but please RSVP for them as well.</li>
+        <li><strong>Are kids allowed?</strong> Yes, children are welcome!</li>
+        <li><strong>Will transportation be provided?</strong> No, but we recommend public transit or carpooling.</li>
+        <li><strong>Will there be free parking?</strong> Yes, free parking is available on-site.</li>
+        <li><strong>What if I have dietary restrictions?</strong> Please let us know in your RSVP.</li>
+        <li><strong>What is the drinks situation?</strong> Complimentary drinks will be provided during the dinner and party.</li>
+        <li><strong>Can I bring pets?</strong> No, pets are not allowed at the venue.</li>
+        <li><strong>When should I arrive?</strong> Please arrive by 16:15 for the ceremony.</li>
+        <li><strong>When does the party end?</strong> The party will conclude at 01:00.</li>
+        <li><strong>Is it wheelchair accessible?</strong> Yes, the venue is wheelchair accessible.</li>
       </ul>
-      <a href="https://forms.gle/SDqznjkPABJNUyBh8" class="rsvp-button">RSVP</a>
     </div>
   </section>
 
