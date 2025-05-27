@@ -624,5 +624,29 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
     const timer = setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
+  <section class="parallax-section" id="gift">
+  <div class="content-section">
+    <h2>Send a Gift</h2>
+    <p>Your presence is the greatest gift of all, but if you'd like to contribute, thank you from the bottom of our hearts!</p>
+
+    <form onsubmit="sendGiftEmail(event)">
+      <label for="email">Your Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+      <label for="amount">Amount (€):</label><br>
+      <input type="number" id="amount" name="amount" min="1" required><br><br>
+
+      <p><strong>Transfer details:</strong>  
+        <br>IBAN: NL00INGB0001234567  
+        <br>Name: A. Persson & Y. Kraak
+      </p>
+
+      <button type="submit" class="rsvp-button">Send Gift Email</button>
+    </form>
+  </div>
+</section>
 </body>
 </html>
