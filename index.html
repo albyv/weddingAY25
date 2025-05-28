@@ -252,6 +252,33 @@
       display: block;
       margin-bottom: 5px;
     }
+/* Gift Button Styling */
+.gift-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1F305E;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.gift-button:hover {
+  background-color: #16324F;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .gift-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+  }
+}
+
+    
   </style>
 </head>
 <body>
@@ -308,7 +335,6 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
     <a href="#gift" class="gift-button">Go to Wedding Gift Section</a>
   </div>
 </section>
-
 
   <!-- Location & Transportation -->
   <section class="parallax-section" id="location">
