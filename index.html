@@ -624,10 +624,13 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
     const timer = setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
- <section class="parallax-section" id="gift">
+<section class="parallax-section" id="gift">
   <div class="content-section">
     <h2>Send a Wedding Gift</h2>
-    <form onsubmit="handleGiftSubmit(event)">
+    <form action="https://formsubmit.co/brollop.kraak.persson@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Wedding Gift Submission">
+
       <label for="name">Your Full Name:</label><br>
       <input type="text" id="name" name="name" required><br><br>
 
@@ -641,51 +644,50 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
       <input type="number" id="amount" name="amount" min="1" required><br><br>
 
       <label for="payment">Choose Payment Method:</label><br>
-      <select id="payment" name="payment" required>
+      <select id="payment" name="payment" required onchange="showGiftMethod(this.value)">
         <option value="" disabled selected>Select a method</option>
         <option value="swish">Swish</option>
         <option value="tikkie">Tikkie</option>
         <option value="transfer">Direct Bank Transfer</option>
       </select><br><br>
 
-      <button type="submit" class="rsvp-button">Continue</button>
+      <button type="submit" class="rsvp-button">Send & See Payment Details</button>
     </form>
 
-    <div id="payment-links" style="display:none; margin-top: 20px;">
+    <div id="payment-links" style="display:none; margin-top: 20px; text-align: center;">
       <h3>Step 2: Make Your Gift</h3>
-      <p id="payment-instructions"></p>
+      <div id="payment-instructions"></div>
     </div>
   </div>
 </section>
+
 <script>
-  function handleGiftSubmit(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    const amount = document.getElementById('amount').value;
-    const payment = document.getElementById('payment').value;
-
-    const mailtoLink = `mailto:brollop.kraak.persson@gmail.com?subject=Gift from ${name}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nGift Amount: €${amount}\nMessage:\n${message}`
-    )}`;
-    
-    window.location.href = mailtoLink;
-
+  function showGiftMethod(method) {
     const instructions = document.getElementById('payment-instructions');
     const linksSection = document.getElementById('payment-links');
+    let content = '';
 
-    let text = '';
-    if (payment === 'swish') {
-      text = 'Please send your gift via Swish to: 0704188978';
-    } else if (payment === 'tikkie') {
-      text = 'Click this link to send your gift via Tikkie: <a href="https://tikkie.me/link-here" target="_blank">Tikkie Link</a>';
-    } else if (payment === 'transfer') {
-      text = 'Please make a bank transfer to:<br>IBAN: NL00INGB0001234567<br>Name: A. Persson & Y. Kraak';
+    if (method === 'swish') {
+      content = `
+        <p>Scan this QR code or use the number below to Swish your gift:</p>
+        <img src="swish.jpg" alt="Swish QR" style="max-width: 250px; margin: 1em 0;"><br>
+        <strong>+46 70 418 89 78</strong>
+      `;
+    } else if (method === 'tikkie') {
+      content = `
+        <p>Scan this Tikkie QR code to send your gift:</p>
+        <img src="tikkie.jpg" alt="Tikkie QR" style="max-width: 250px; margin: 1em 0;"><br>
+        <a href="https://tikkie.me/link-here" target="_blank">Or click here to open Tikkie</a>
+      `;
+    } else if (method === 'transfer') {
+      content = `
+        <p>Please transfer your gift to the following account:</p>
+        <strong>IBAN: NL00INGB0001234567</strong><br>
+        <strong>Name: A. Persson & Y. Kraak</strong>
+      `;
     }
 
-    instructions.innerHTML = text;
+    instructions.innerHTML = content;
     linksSection.style.display = 'block';
   }
 </script>
