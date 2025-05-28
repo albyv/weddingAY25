@@ -624,73 +624,75 @@ If you have any questions about the wedding, don’t hesitate to reach out to us
     const timer = setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
+<!-- Gift Form Section -->
 <section class="parallax-section" id="gift">
   <div class="content-section">
-    <h2>Send a Wedding Gift</h2>
-    <form action="https://formsubmit.co/brollop.kraak.persson@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="Wedding Gift Submission">
+    <h2>Gift Contribution</h2>
+    <p>If you'd like to give a gift, please fill out the form below. Once submitted, you'll be redirected to your chosen payment method.</p>
 
-      <label for="name">Your Full Name:</label><br>
+    <form action="https://formsubmit.co/brollop.kraak.persson@gmail.com" method="POST">
+      <label for="name">Full Name:</label><br>
       <input type="text" id="name" name="name" required><br><br>
 
-      <label for="email">Your Email:</label><br>
+      <label for="email">Email:</label><br>
       <input type="email" id="email" name="email" required><br><br>
 
-      <label for="message">Message to Albin & Yvonne:</label><br>
+      <label for="message">Message to the Wedding Couple:</label><br>
       <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
-      <label for="amount">Gift Amount (€):</label><br>
-      <input type="number" id="amount" name="amount" min="1" required><br><br>
-
       <label for="payment">Choose Payment Method:</label><br>
-      <select id="payment" name="payment" required onchange="showGiftMethod(this.value)">
-        <option value="" disabled selected>Select a method</option>
+      <select id="payment" name="payment" required onchange="showPaymentInstructions()">
+        <option value="">--Please choose an option--</option>
         <option value="swish">Swish</option>
         <option value="tikkie">Tikkie</option>
-        <option value="transfer">Direct Bank Transfer</option>
+        <option value="bank">Direct Bank Transfer (ING)</option>
       </select><br><br>
 
-      <button type="submit" class="rsvp-button">Send & See Payment Details</button>
+      <button type="submit">Send Message</button>
     </form>
 
-    <div id="payment-links" style="display:none; margin-top: 20px; text-align: center;">
-      <h3>Step 2: Make Your Gift</h3>
-      <div id="payment-instructions"></div>
+    <div id="payment-instructions" style="margin-top: 2em; display:none;">
+      <div id="swish-instructions" style="display:none;">
+        <h3>Swish</h3>
+        <img src="swish.jpg" alt="Swish QR Code" style="max-width:200px;"><br>
+        <p>Please scan this QR code using your Swish app and enter the amount manually.</p>
+      </div>
+      <div id="tikkie-instructions" style="display:none;">
+        <h3>Tikkie</h3>
+        <img src="tikkie.jpg" alt="Tikkie QR Code" style="max-width:200px;"><br>
+        <p>Please scan this QR code to open the Tikkie link and enter the amount manually.</p>
+      </div>
+      <div id="bank-instructions" style="display:none;">
+        <h3>Bank Transfer</h3>
+        <p>Please transfer your gift to our ING bank account:</p>
+        <p><strong>Account Name:</strong> Albin Persson<br>
+        <strong>IBAN:</strong> NL12 INGB 0000 0000 00<br>
+        <strong>BIC:</strong> INGBNL2A<br>
+        <strong>Bank Address:</strong> ING Bank N.V., Bijlmerplein 888, 1102 MG Amsterdam, Netherlands<br>
+        <strong>Message:</strong> Wedding Gift</p>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  function showGiftMethod(method) {
-    const instructions = document.getElementById('payment-instructions');
-    const linksSection = document.getElementById('payment-links');
-    let content = '';
+  function showPaymentInstructions() {
+    document.getElementById('payment-instructions').style.display = 'block';
+    document.getElementById('swish-instructions').style.display = 'none';
+    document.getElementById('tikkie-instructions').style.display = 'none';
+    document.getElementById('bank-instructions').style.display = 'none';
 
-    if (method === 'swish') {
-      content = `
-        <p>Scan this QR code or use the number below to Swish your gift:</p>
-        <img src="swish.jpg" alt="Swish QR" style="max-width: 250px; margin: 1em 0;"><br>
-        <strong>+46 70 418 89 78</strong>
-      `;
-    } else if (method === 'tikkie') {
-      content = `
-        <p>Scan this Tikkie QR code to send your gift:</p>
-        <img src="tikkie.jpg" alt="Tikkie QR" style="max-width: 250px; margin: 1em 0;"><br>
-        <a href="https://tikkie.me/link-here" target="_blank">Or click here to open Tikkie</a>
-      `;
-    } else if (method === 'transfer') {
-      content = `
-        <p>Please transfer your gift to the following account:</p>
-        <strong>IBAN: NL00INGB0001234567</strong><br>
-        <strong>Name: A. Persson & Y. Kraak</strong>
-      `;
+    var selected = document.getElementById('payment').value;
+    if (selected === 'swish') {
+      document.getElementById('swish-instructions').style.display = 'block';
+    } else if (selected === 'tikkie') {
+      document.getElementById('tikkie-instructions').style.display = 'block';
+    } else if (selected === 'bank') {
+      document.getElementById('bank-instructions').style.display = 'block';
     }
-
-    instructions.innerHTML = content;
-    linksSection.style.display = 'block';
   }
 </script>
+
 
 </body>
 </html>
